@@ -1,0 +1,20 @@
+#server:
+#  port: ${PORT:1111}
+
+spring:
+  r2dbc:
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:12345678}
+    url: ${DB_URL:r2dbc:mysql://localhost:3306/sharedDB}
+    pool:
+      enabled: true
+      initial-size: ${INITIAL_SIZE:50}
+      max-size: ${MAX_SIZE:100}
+
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    ROOT: ${LOG_LEVEL:info}
